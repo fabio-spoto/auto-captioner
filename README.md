@@ -4,10 +4,10 @@ Automated Python CLI tool for transcribing videos with OpenAI Whisper, creating 
 ## Showcase
 
 ### Before
-![before](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/showcase/before.png)
+![before](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/before.jpg)
 
 ### After
-![after](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/showcase/after.png)
+![after](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/after.jpg)
 
 ## Installation
 ### Make sure you have the right python version
