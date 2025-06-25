@@ -197,3 +197,4 @@ cython_debug/
 *.mp4
 *.mov
 *.srt
+.DS_Store
