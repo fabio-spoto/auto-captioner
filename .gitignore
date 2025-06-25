@@ -195,4 +195,5 @@ cython_debug/
 
 # General
 *.mp4
+*.mov
 *.srt
