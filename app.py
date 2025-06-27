@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, render_template, redirect, request, session, jsonify, url_for, send_from_directory
 from concurrent.futures import ThreadPoolExecutor
 from werkzeug.utils import secure_filename
@@ -55,8 +54,10 @@ def completed():
 
 @app.route('/result')
 def result():
-    filename = session.get('video_filename')
-    return render_template('result.html', filename=filename)
+    orig = session.get('video_filename')
+    name, ext = os.path.splitext(orig)
+    output_name = f"{name}_output{ext}"
+    return render_template('result.html', filename=output_name)
 
 @app.route('/video/<filename>')
 def video(filename):
