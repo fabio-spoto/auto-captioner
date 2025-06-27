@@ -2,4 +2,5 @@ openai-whisper
 torchvision
 torchaudio
 whisper
+flask
 torch

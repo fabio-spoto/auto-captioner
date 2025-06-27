@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Captioner</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/pico.min.css') }}"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Auto Captioner</h1>
+      <form method="post" enctype="multipart/form-data">
+        {% if is_processing %}
+        <input
+          type="file"
+          name="video"
+          accept="video/mp4, .mp4"
+          required
+          disabled
+        />
+        <fieldset disabled>
+        {% else %}
+        <input
+          type="file"
+          name="video"
+          accept="video/mp4, .mp4"
+          required
+        />
+        <fieldset>
+        {% endif %}
+          <legend>Whisper Model:</legend>
+          <label>
+            <input type="radio" name="model" value="tiny" />
+            Tiny
+          </label>
+          <label>
+            <input type="radio" name="model" value="base" />
+            Base
+          </label>
+          <label>
+            <input type="radio" name="model" value="small" checked />
+            Small (Recommended)
+          </label>
+          <label>
+            <input type="radio" name="model" value="medium" />
+            Medium
+          </label>
+          <label>
+            <input type="radio" name="model" value="large" />
+            Large
+          </label>
+          <label>
+            <input type="radio" name="model" value="turbo" />
+            Turbo
+          </label>
+        </fieldset>
+        {% if is_processing %}
+        <button class="contrast" type="submit" aria-busy="true" disabled>
+          Processing...
+        </button>
+        {% else %}
+        <button class="contrast" type="submit">Generate Video</button>
+        {% endif %}
+      </form>
+    </main>
+    {% if is_processing %}
+  <script>
+    const interval = setInterval(async () => {
+      const resp = await fetch("{{ url_for('completed') }}", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const data = await resp.json();
+      if (data.completed) {
+        clearInterval(interval);
+        window.location.href = "{{ url_for('result') }}";
+      }
+    }, 3000);
+  </script>
+  {% endif %}
+  </body>
+</html>

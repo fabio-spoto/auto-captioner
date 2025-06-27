@@ -1,13 +1,9 @@
 # Auto Captioner – Transcribing videos with OpenAI Whisper
 Automated Python CLI tool for transcribing videos with OpenAI Whisper, creating word-aligned SRT subtitles, and stylized embedding into the video via FFmpeg.
 
-## Showcase
+## GUI
 
-### Before
-![before](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/before.jpg)
-
-### After
-![after](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/after.jpg)
+![before](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/gui.jpg)
 
 ## Installation
 ### Make sure you have the right python version
@@ -24,15 +20,7 @@ pip install -r requirements.txt
 ## Get Started
 ### Generate video
 ```
-python auto-captioner.py video.mp4
-```
-### Set specific whisper model (default is small)
-```
-python auto-captioner.py video.mp4 --model large
-```
-### See options with help command
-```
-python auto-captioner.py -h
+python app.py
 ```
 
 ## Donation

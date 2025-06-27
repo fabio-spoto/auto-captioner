@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Captioner</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/pico.min.css') }}"
+    />
+  </head>
+  <style>
+    video {
+      height: 600px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <main class="container">
+      <h1>Video Created!</h1>
+      <video controls>
+        <source
+          src="{{ url_for('video', filename=filename) }}"
+          type="video/mp4"
+        />
+        Your browser doesn't support HTML5-Video.
+      </video>
+      <div class="buttons">
+        <a class="button contrast" href="{{ url_for('index') }}"
+          >Back to Homepage</a
+        >
+        <a
+          class="contrast button"
+          href="{{ url_for('download', filename=filename) }}"
+          download
+          >Download Video</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
