@@ -3,7 +3,7 @@ Automated Python GUI application for transcribing videos with Whisper, generatin
 
 ## GUI
 
-![before](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/gui.jpg)
+![GUI](https://raw.githubusercontent.com/fabio-spoto/auto-captioner/refs/heads/main/.github/gui.jpg)
 
 ## Installation
 ### Make sure you have the right python version
